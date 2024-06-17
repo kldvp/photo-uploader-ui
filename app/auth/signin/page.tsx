@@ -42,7 +42,7 @@ export default function Signin() {
     <TextField label="Password" variant="outlined" type="password" onChange={e => setPassword(e.target.value)}></TextField>
     <Button variant="contained" type="submit" onClick={submit}>Signin</Button>
     <span>
-    Doesn't have an account?  
+    Does not have an account?  
     <Link component={Nextlink} href="/auth/signup" className="self-center">
         Signup
     </Link>
