@@ -7,7 +7,7 @@ export default function GalleryLayout({
     children: React.ReactNode;
   }>) {
     return (
-        <Box className="h-screen flex items-center justify-center">
+        <Box className="h-screen flex items-center justify-center" sx={{ '& button': { m: 1 } }}>
             {children}
         </Box>
     );

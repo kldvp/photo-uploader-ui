@@ -3,6 +3,7 @@ import React, {SyntheticEvent, useState} from 'react';
 import { Button, Stack, TextField, Link, Alert } from "@mui/material";
 import Nextlink from 'next/link';
 import {useRouter} from "next/navigation";
+import * as deploy from '../../utils/constants';
 
 
 
@@ -15,7 +16,7 @@ export default function Signin() {
     const submit = async (e: SyntheticEvent) => {
         e.preventDefault();
 
-        let res = await fetch('http://localhost:3000/login', {
+        let res = await fetch(`${deploy.config.backendUrl}/login`, {
             method: 'POST',
             headers: {
               'Content-Type': 'application/json',
