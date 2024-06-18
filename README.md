@@ -8,8 +8,13 @@
 
 ## Getting Started
 
-First, run the development server:
+- Clone repository
+- Install Dependencies
+```
+npm install
+```
 
+- Run the development server:
 ```bash
 npm run dev
 ```
