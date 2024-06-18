@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import { useRouter } from "next/navigation";
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
+import ImageListItemBar from '@mui/material/ImageListItemBar';
 import Image from 'next/image'
 import { Stack, Alert, Link } from '@mui/material';
 import { styled } from '@mui/material/styles';
@@ -113,15 +114,19 @@ export default function Gallery() {
     return (
         <Stack spacing={2}>
             <Button variant="outlined" onClick={handleLogout} startIcon={<LogoutIcon />}>
-                    Logout
+                Logout
             </Button>
             <InputFileUpload onFormSubmit={handleFormSubmit}></InputFileUpload>
-            <ImageList sx={{ width: 500, height: 450 }} cols={3} rowHeight={164}>
+            <ImageList sx={{ width: 450, height: 450 }} cols={3} rowHeight={164}>
                 {data.data.map((item) => (
                     <ImageListItem key={item.id}>
                         <img
                             src={`${item.url}`}
                             alt={item.filename}
+                        />
+                        <ImageListItemBar
+                            title={item.filename}
+                            position="below"
                         />
                     </ImageListItem>
                 ))}
